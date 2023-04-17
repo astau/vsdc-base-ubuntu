@@ -23,6 +23,6 @@ jobs:
       - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/astau/vsdc-base-ubuntu
-          cacheFrom: ghcr.io/astau/vsdc-base-ubuntu
+          imageName: ghcr.io/${{ github.repository_owner }}/vsdc-base-ubuntu
+          cacheFrom: ghcr.io/${{ github.repository_owner }}/vsdc-base-ubuntu
           push: always
