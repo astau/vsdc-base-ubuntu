@@ -1,9 +1,8 @@
 name: 'Build and Push' 
-on: # rebuild any PRs and main branch changes
-  pull_request:
+on: # pre-build on pushing a tag
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   build:
