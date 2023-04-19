@@ -1,9 +1,10 @@
 {
-    "name": "DevBase",
+    "name": "base-ubuntu",
     "build": {
         "dockerfile": "./Dockerfile",
         "context": "."
     },
+    "runArgs": ["--name", "vsdc-base-ubuntu"],
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {
             "username": "srikanth",
@@ -15,15 +16,15 @@
             "upgradePackages": "true"
         },
         "ghcr.io/devcontainers/features/github-cli:1": {}
-    },    
+    },
+    "remoteUser": "srikanth",
+    "containerUser": "srikanth",
+        
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
 
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "uname -a",
-
-    // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "srikanth",
 
     "customizations": {
 		"vscode": {

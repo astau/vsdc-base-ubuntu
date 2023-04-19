@@ -3,5 +3,16 @@ FROM buildpack-deps:${VARIANT}-curl
 
 LABEL dev.containers.features="common"
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && yes | unminimize 2>&1 
+ENV LANG="C.UTF-8"
+
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y --no-install-recommends \
+        make \
+        yarn \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get update \
+    && apt-get upgrade -y \
+    && rm -rf /var/lib/apt/lists/* \
+    && yes | unminimize 2>&1
