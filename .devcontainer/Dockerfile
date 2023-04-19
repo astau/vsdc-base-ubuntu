@@ -11,6 +11,8 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         make \
         yarn \
+        cloc \
+        httpie \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get update \
     && apt-get upgrade -y \
