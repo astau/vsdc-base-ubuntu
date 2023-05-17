@@ -4,7 +4,7 @@
         "dockerfile": "./Dockerfile",
         "context": "."
     },
-    "runArgs": ["--name", "vsdc-base-ubuntu"],
+    "runArgs": ["--name", "${localWorkspaceFolderBasename}"],
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {
             "username": "srikanth",
@@ -28,7 +28,12 @@
 
     "customizations": {
 		"vscode": {
-			"settings": {},
+			"settings": {
+                // Clone your personal dotfiles repo to customize enviroment
+                "dotfiles.repository": "git@github.com:astau/my-dotfiles.git",
+                "dotfiles.installCommand": "~/.my-dotfiles/bootstrap.sh",
+                "dotfiles.targetPath": "~/.my-dotfiles"                
+            },
 			"extensions": [
                 "eamodio.gitlens"
             ]

@@ -9,6 +9,7 @@ RUN apt-get update \
     && apt-get upgrade -y \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends \
+        lsb-core \
         make \
         yarn \
         cloc \
